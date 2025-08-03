@@ -1,0 +1,10 @@
+{
+  "name": "Shahid",
+  "referralCode": "shahid2025",
+  "totalDonations": 5000,
+  "rewards": [
+    { "name": "Bronze Badge", "image": "/badges/bronze.png" },
+    { "name": "Silver Badge", "image": "/badges/silver.png" },
+    { "name": "Gold Badge", "image": "/badges/gold.png" }
+  ]
+}

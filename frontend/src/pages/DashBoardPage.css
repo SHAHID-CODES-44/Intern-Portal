@@ -1,0 +1,265 @@
+/* Dashboard Page Variables */
+:root {
+  --primary-color: #6a1b9a;
+  --secondary-color: #ff6d00;
+  --text-color: #333;
+  --light-gray: #f5f5f5;
+  --white: #ffffff;
+  --card-bg: #ffffff;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Base Styles */
+#dashboard-page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--light-gray);
+}
+
+/* Navigation Bar */
+#dashboard-navbar {
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  padding: 15px 5%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+#dashboard-nav-content {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#dashboard-home-button {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+#dashboard-home-button:hover {
+  color: var(--secondary-color);
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+}
+
+/* Dashboard Container */
+#dashboard-container {
+  max-width: 1200px;
+  width: 95%;
+  margin: 20px auto;
+  padding: 0 20px;
+  flex-grow: 1;
+}
+
+/* Dashboard Header */
+#dashboard-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.dashboard-title {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.dashboard-subtitle {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+/* Dashboard Grid Layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 20px;
+  transition: var(--transition);
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.section-icon {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+}
+
+.section-title {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+/* Referral Section */
+.referral-code {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin: 15px 0;
+  padding: 10px;
+  background-color: var(--light-gray);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.copy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.copy-btn:hover {
+  background-color: #5a148a;
+}
+
+.copy-btn.copied {
+  background-color: var(--secondary-color);
+}
+
+.leaderboard-link {
+  display: block;
+  margin-top: 15px;
+  text-align: center;
+  color: var(--primary-color);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+.leaderboard-link:hover {
+  color: var(--secondary-color);
+}
+
+/* Donations Section */
+.donation-amount {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Rewards Section */
+.rewards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.reward-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.reward-image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 50%;
+  background-color: var(--light-gray);
+  padding: 5px;
+}
+
+.reward-name {
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+/* Loading State */
+#dashboard-loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-top: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-title {
+    font-size: 1.8rem;
+  }
+  
+  .dashboard-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  #dashboard-container {
+    padding: 0 10px;
+  }
+  
+  .dashboard-title {
+    font-size: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.1rem;
+  }
+  
+  .referral-code {
+    font-size: 1.2rem;
+  }
+  
+  .donation-amount {
+    font-size: 1.5rem;
+  margin: 15px 0;
+  }
+}

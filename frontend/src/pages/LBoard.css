@@ -1,0 +1,246 @@
+/* Leaderboard Page Variables */
+:root {
+  --primary-color: #6a1b9a;
+  --secondary-color: #ff6d00;
+  --text-color: #333;
+  --light-gray: #f5f5f5;
+  --white: #ffffff;
+  --table-header-bg: #f8f9fa;
+  --table-border: #e9ecef;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Base Styles */
+#leaderboard-page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--light-gray);
+}
+
+/* Navigation Bar */
+#leaderboard-navbar {
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  padding: 15px 5%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+#leaderboard-nav-content {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#leaderboard-home-button {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+#leaderboard-home-button:hover {
+  color: var(--secondary-color);
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+}
+
+/* Leaderboard Container */
+#leaderboard-container {
+  max-width: 1200px;
+  width: 95%;
+  margin: 20px auto;
+  padding: 0 20px;
+  flex-grow: 1;
+}
+
+/* Leaderboard Header */
+.leaderboard-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.leaderboard-title {
+  color: var(--primary-color);
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.title-icon {
+  color: var(--secondary-color);
+}
+
+.leaderboard-subtitle {
+  color: var(--text-color);
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+/* Table Styles */
+.table-container {
+  overflow-x: auto;
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.leaderboard-table th {
+  background-color: var(--table-header-bg);
+  color: var(--primary-color);
+  font-weight: 600;
+  padding: 15px;
+  text-align: left;
+}
+
+.leaderboard-table td {
+  padding: 15px;
+  border-bottom: 1px solid var(--table-border);
+}
+
+.leaderboard-table tr:last-child td {
+  border-bottom: none;
+}
+
+.leaderboard-table tr:hover {
+  background-color: rgba(106, 27, 154, 0.05);
+}
+
+/* Special row styling for top 3 */
+.leaderboard-row.top-1 {
+  background-color: rgba(255, 215, 0, 0.1);
+}
+
+.leaderboard-row.top-2 {
+  background-color: rgba(192, 192, 192, 0.1);
+}
+
+.leaderboard-row.top-3 {
+  background-color: rgba(205, 127, 50, 0.1);
+}
+
+/* Rank column */
+.table-rank {
+  font-weight: 600;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rank-icon {
+  font-size: 1.2rem;
+}
+
+.rank-icon.rank-1 {
+  color: gold;
+}
+
+.rank-icon.rank-2 {
+  color: silver;
+}
+
+.rank-icon.rank-3 {
+  color: #cd7f32; /* bronze */
+}
+
+/* Donations column */
+.table-donations {
+  font-weight: 600;
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.rupee-icon {
+  font-size: 0.9rem;
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.loading-spinner {
+  border: 4px solid rgba(106, 27, 154, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid var(--primary-color);
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  color: var(--text-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .leaderboard-title {
+    font-size: 1.8rem;
+  }
+  
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 12px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  #leaderboard-container {
+    padding: 0 10px;
+  }
+  
+  .leaderboard-title {
+    font-size: 1.5rem;
+  }
+  
+  .leaderboard-subtitle {
+    font-size: 1rem;
+  }
+  
+  .table-rank {
+    width: 60px;
+  }
+}
